@@ -1,0 +1,29 @@
+<%- include("../header") %>
+
+<div class="container" id="contactContainer">
+     <h1 class="text-center">ALL LIBRARY</h1>
+     <table class="table">
+        <tr>
+            <th  scope="col">Library Name</th>
+            <th  scope="col">EDIT</th>
+            <th  scope="col">DELETE-</th>
+        </tr>
+        <% if (libraries && libraries.length > 0) { %>
+            <% libraries.forEach (library =>{ %>
+        <tr>
+            <td><%= library.libraryName %></td>
+            <td><button type="button" class="btn btn-primary"><i class="fa-solid fa-pen-to-square"></i>EDIT</button></td>
+            <td><button type="button" class="btn btn-danger"><i class="fa-solid fa-trash"></i>DELETE</button></td>
+        </tr>
+        <% }); %>
+        <% } else { %>
+            <tr>
+                <th>NO LIBRARY FOUND</th>
+            </tr>
+        <% } %>
+     </table>
+</div>
+
+<%- include("../footer") %>
+
+

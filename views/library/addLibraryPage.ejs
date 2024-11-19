@@ -1,0 +1,15 @@
+<%- include("../header") %>
+
+<div class="container" id="contactContainer">
+<h1>ADD LIBRARY</h1>
+<form action="/library/showLib" method="post" id="libraryForm" class="form-group text-center">
+    
+    <input type="text" name="libraryName" id="libraryName"  class="form-control" placeholder="Enter Your Library Name" /><br/>
+     <br>
+    <button type="submit" class="btn btn-primary">ADD LIBRARY</button>
+<div id="library-err" class="text-danger"></div>
+
+</form>
+</div>
+
+<%- include("../footer") %>

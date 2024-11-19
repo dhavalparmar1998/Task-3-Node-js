@@ -1,0 +1,44 @@
+<%- include("../header") %>
+
+<div class="container" id="contactContainer">
+  <h1>ADD CONTACT</h1>
+  <form action="" id="contactForm" class="form-group text-center">
+   
+    <select name="selectGroup" id="" class="form-select">
+      <% if(group && group.length > 0) { %>
+        <% group.forEach(group => { %>
+            <option value="<%= group._id %>"><%= group.groupName %></option>
+        <% }); %>
+      <% } %>
+      </select
+    ><br />
+    
+    <input
+      type="text"
+      name="contactName"
+      id="contactName"
+      class="form-control"
+      placeholder="Enter Your Name"
+    /><br />
+    <input
+      type="text"
+      name="contactPhone"
+      id="contactPhone"
+      class="form-control"
+      placeholder="Enter Your Phone NO"
+    /><br />
+    <input
+      type="email"
+      name="contactEmail"
+      id="contactEmail"
+      class="form-control"
+      placeholder="Enter Your Email Address"
+    /><br />
+    <button type="submit" class="btn btn-primary">ADD CONTACT</button>
+  </form>
+  <div id="contact-err" class="text-danger">
+  
+  </div>
+</div>
+
+<%- include("../footer") %>

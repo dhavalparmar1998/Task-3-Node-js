@@ -1,0 +1,21 @@
+<%- include("../header") %>
+
+<div class="container" id="contactContainer">
+<h1>ADD MESSAGE</h1>
+<form action="/message" method="post" id="messageForm" class="form-group text-center">
+        <select name="selectLirary" id="" class="form-select">
+
+            <% if(library && library.length>0) {%>
+                <% library.forEach(library =>{%>
+            <option value="<% library._id %>"><%= library.libraryName %></option>
+            <% }); %>
+            <% } %>
+        </select><br/>
+        <textarea name="addMessage" id="addMessage" class="form-control"></textarea><br/>
+    <button type="submit" class="btn btn-primary">ADD MESSAGE</button>
+</form>
+<div id="msg-err" class="text-danger"></div>
+
+</div>
+
+<%- include("../footer") %>

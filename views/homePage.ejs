@@ -1,0 +1,101 @@
+<%- include('header')%>
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-3">
+      <div id="libraryList">
+        <h1 class="text-primary text-center">LIBRARY</h1>
+        <ul class="list-group list-group-flush">
+          <% if (libraries && libraries.length > 0) { %>
+            <% libraries.forEach(library => { %>
+              <li>
+                <a href=""  class="library-link" data-library-id="<%= library._id %>">
+                  <%= library.libraryName %>
+                </a>
+              </li>
+            <% }); %>
+          <% } else { %>
+            <li class="list-group-item list-group-item-danger">
+              <th>NO LIBRARY FOUND</th>
+            </li>
+          <% } %>
+        </ul>
+      </div>
+
+      <div id="msgList" style="display: none;">
+        <h1 class="text-primary text-center">MESSAGES</h1>
+        <ul class="list-group list-group-flush">
+          <% if (msg && msg.length > 0) { %>
+            <% msg.forEach(msg => { %>
+              <li>
+                <a href="" class="msg-link">
+                  <%= msg.addMessage %>
+                </a>
+              </li>
+            <% }); %>
+          <% } else { %>
+            <li class="list-group-item list-group-item-danger">
+              <th>NO MESSAGE FOUND</th>
+            </li>
+          <% } %>
+        </ul>
+      </div>
+    </div>
+
+    <div class="col-6">
+      <br>
+      <br>
+      <br>
+      <h1 class="text-center text-danger">SEND MESSAGE</h1>
+      <form action="" class="form-group text-center">
+        <input type="text" name="userName" id="userName" class="form-control" placeholder="Enter User Name" /><br>
+        <input type="text" name="userPhone" id="userPhone" class="form-control" placeholder="Enter User Phone No" /><br>
+        <input type="email" name="userEmail" id="userEmail" class="form-control" placeholder="Enter User Email Address" /><br>
+        <input type="text" name="userMsg" id="userMsg" class="form-control" placeholder="Enter User Message" /><br><br><br>
+        <button type="submit" class="submit btn btn-primary">SEND EMAIL</button>
+      </form>
+    </div>
+
+    <div class="col-3">
+      <div id="groupList">
+        <h1 class="text-primary text-center">GROUPS</h1>
+        <ul class="list-group list-group-flush">
+          <% if (grp && grp.length > 0) { %>
+            <% grp.forEach(obj => { %>
+              <li>
+                <a href="" class="group-link" data-group-id="<%= obj._id %>">
+                  <%= obj.groupName %>
+                </a>
+              </li>
+            <% }); %>
+          <% } else { %>
+            <li class="list-group-item list-group-item-danger">
+              <th>NO GROUPS FOUND</th>
+            </li>
+          <% } %>
+        </ul>
+      </div>
+
+      <div id="contactList" style="display: none;">
+        <h1 class="text-primary text-center">CONTACTS</h1>
+        <ul class="list-group list-group-flush">
+          <% if (cont && cont.length > 0) { %>
+            <% cont.forEach(cont => { %>
+              <li>
+                <a href="#" class="contact-link" data-contact-id="<%= cont._id %>">
+                  <%= cont.contactName %>
+                </a>
+              </li>
+            <% }); %>
+          <% } else { %>
+            <li class="list-group-item list-group-item-danger">
+              <th>NO CONTACTS FOUND</th>
+            </li>
+          <% } %>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<%- include('footer')%>

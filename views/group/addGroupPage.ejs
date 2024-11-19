@@ -1,0 +1,14 @@
+<%- include("../header") %>
+
+<div class="container" id="groupContainer">
+<h1>ADD GROUPS</h1>
+<form action="/group/showGrp" method="post" id="groupForm" class="form-group text-center">
+    
+    <input type="text" name="groupName" id="groupName"  class="form-control" placeholder="Enter Your Group Name" /><br/>
+     <br>
+    <button type="submit" class="btn btn-primary">ADD Group</button>
+</form>
+<div id="group-err" class="text-danger"></div>
+</div>
+
+<%- include("../footer") %>

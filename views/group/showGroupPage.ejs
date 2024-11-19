@@ -1,0 +1,29 @@
+<%- include("../header") %>
+
+<div class="container" id="groupContainer">
+     <h1 class="text-center">ALL GROUPS</h1>
+     <table class="table">
+        <tr>
+            <th  scope="col">Group Name</th>
+            <th  scope="col">EDIT</th>
+            <th  scope="col">DELETE-</th>
+        </tr>
+        <% if(grp && grp.length>0) { %>
+            <% grp.forEach(grp =>{ %>
+        <tr>
+            <td><%= grp.groupName %></td>
+            <td><button type="button" class="btn btn-primary"><i class="fa-solid fa-pen-to-square"></i>EDIT</button></td>
+            <td><button type="button" class="btn btn-danger"><i class="fa-solid fa-trash"></i>DELETE</button></td>
+        </tr>
+        <% }); %>
+        <% } else {%>
+            <tr>
+                <td>NO GROUPS FOUND</td>
+            </tr>
+        <%}%>
+     </table>
+</div>
+
+<%- include("../footer") %>
+
+
